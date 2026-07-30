@@ -66,7 +66,7 @@ function AddRecipe() {
                         </label>
                         <input
                             type="text"
-                            name="strMeal"
+                            name="title"
                             value={recipe.title}
                             onChange={handleChange}
                             className="w-full mt-2 border border-gray-300 rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-red-500"
@@ -80,7 +80,7 @@ function AddRecipe() {
                         </label>
                         <input
                             type="text"
-                            name="strCategory"
+                            name="ingredients"
                             value={recipe.ingredients}
                             onChange={handleChange}
                             className="w-full mt-2 border border-gray-300 rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-red-500"
@@ -94,7 +94,7 @@ function AddRecipe() {
                         </label>
                         <textarea
                             rows="5"
-                            name="recipe.instructions"
+                            name="instructions"
                             value={recipe.instructions}
                             onChange={handleChange}
                             className="w-full mt-2 border border-gray-300 rounded-xl p-3 resize-none focus:outline-none focus:ring-2 focus:ring-red-500"
@@ -104,11 +104,11 @@ function AddRecipe() {
 
                     <div>
                         <label className="font-semibold text-gray-700">
-                            Image URL
+                            imageUrl
                         </label>
                         <input
                             type="text"
-                            name="strImg"
+                            name="imageUrl"
                             value={recipe.imageUrl}
                             onChange={handleChange}
                             className="w-full mt-2 border border-gray-300 rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-red-500"
