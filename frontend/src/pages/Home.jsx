@@ -5,7 +5,7 @@ function Home() {
     const [popularRecipes, setPopularRecipes] = useState([]);
 
     useEffect(() => {
-        fetch(`${import.meta.env.VITE_API_URL}/recipe/popular`)
+        fetch(`${import.meta.env.VITE_API_URL}/recipes/popular`)
             .then((res) => res.json())
             .then((data) => setPopularRecipes(data))
             .catch((err) => console.error(err));
