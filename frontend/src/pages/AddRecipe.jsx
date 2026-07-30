@@ -18,7 +18,7 @@ function AddRecipe() {
     }
 
     function saveRecipe() {
-        fetch("http://localhost:8080/recipe", {
+        fetch(`${import.meta.env.VITE_API_URL}/recipe`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

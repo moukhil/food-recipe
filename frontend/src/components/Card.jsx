@@ -8,7 +8,7 @@ function Card({ finalName }) {
     useEffect(() => {
         setLoading(true);
 
-        fetch(`http://localhost:8080/recipe/${finalName}`)
+        fetch(`${import.meta.env.VITE_API_URL}/recipe/${finalName}`)
             .then((res) => res.json())
             .then((data) => {
                 if (data.length > 0) {

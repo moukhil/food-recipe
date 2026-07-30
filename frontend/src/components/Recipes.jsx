@@ -6,7 +6,7 @@ function Recipes() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch("http://localhost:8080/recipe")
+        fetch(`${import.meta.env.VITE_API_URL}/recipe`)
             .then((res) => res.json())
             .then((data) => {
                 setRecipes(data);
