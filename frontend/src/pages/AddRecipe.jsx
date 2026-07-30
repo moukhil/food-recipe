@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 function AddRecipe() {
+    const [msg, setMsg] = useState("");
     const [recipe, setRecipe] = useState({
         id: "",
         title: "",
@@ -26,7 +27,7 @@ function AddRecipe() {
         })
             .then((res) => res.json())
             .then(() => {
-                alert("✅ Recipe Saved Successfully!");
+                setMsg("Recipe Saved Successfully!");
 
                 setRecipe({
                     title: "",
@@ -41,7 +42,11 @@ function AddRecipe() {
     return (
         <div className="min-h-screen bg-gray-100 py-12 px-6">
             <div className="max-w-3xl mx-auto bg-white shadow-2xl rounded-3xl overflow-hidden">
-
+                {msg && (
+                    <div className="mt-4 p-3 rounded-lg bg-green-100 text-green-700 border border-green-300">
+                        {msg}
+                    </div>
+                )}
                 {/* Header */}
                 <div className="bg-black text-white text-center py-6">
                     <h1 className="text-4xl font-bold">

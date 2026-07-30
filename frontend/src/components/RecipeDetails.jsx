@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 function RecipeDetails() {
     const { id } = useParams();
     const [recipe, setRecipe] = useState(null);
+    const [msg, setMsg] = useState("");
 
     useEffect(() => {
         fetch(`http://localhost:8080/recipe/id/${id}`)
@@ -17,14 +18,12 @@ function RecipeDetails() {
     }
     const handleSaveRecipe = () => {
         const content = `
-Title: ${recipe.title}
-
-Ingredients:
-${recipe.ingredients}
-
-Instructions:
-${recipe.instructions}
-    `;
+        Title: 
+        ${recipe.title}
+        Ingredients:
+        ${recipe.ingredients}
+        Instructions:
+        ${recipe.instructions}`;
 
         const blob = new Blob([content], { type: "text/plain" });
         const url = window.URL.createObjectURL(blob);
@@ -55,13 +54,17 @@ ${recipe.instructions}
             }
         } else {
             await navigator.clipboard.writeText(window.location.href);
-            alert("Recipe link copied to clipboard!");
+            setMsg("Recipe link copied to clipboard!");
         }
     };
     return (
         <div className="min-h-screen bg-gray-100 py-12 px-6">
             <div className="max-w-6xl mx-auto bg-white rounded-3xl shadow-2xl overflow-hidden">
-
+                {msg && (
+                    <div className="mt-4 p-3 rounded-lg bg-green-100 text-green-700 border border-green-300">
+                        {msg}
+                    </div>
+                )}
                 <div className="grid md:grid-cols-2">
 
                     {/* Left - Recipe Image */}
