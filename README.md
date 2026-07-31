@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Food Recipe Application
 
 A modern full-stack **Food Recipe Management System** built using **React.js**, **Spring Boot**, and **MySQL**. The application allows users to search recipes, explore recipe details, browse popular dishes, and add new recipes through an intuitive and responsive interface.
@@ -247,3 +248,6 @@ It helps others discover the project and motivates further improvements.
 ## 📜 License
 
 This project is licensed under the MIT License.
+=======
+
+>>>>>>> 0bdae440741d1115bb2c6ce65a28bcd64636f02b
